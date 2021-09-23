@@ -1,0 +1,3 @@
+public enum HousingLocation {
+    CENTRAL_CAMPUS, EAST_CAMPUS, WEST_CAMPUS, NORTH_CAMPUS, SOUTH_CAMPUS;
+}

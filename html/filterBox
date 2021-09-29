@@ -1,1 +1,3 @@
-document.getElementById("test").value = "After";
+function change() {
+  document.getElementById("test").value = "After";
+}

@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang = "en-US>
+<html lang = "en-US">
+<style>
+* {
+  box-sizing: border-box;
+}
+[class *= "box-"]{
+  float: left;
+  padding: 10px;
+  border: 2px solid powderblue;
+}
+.box-filter {
+  width: 30%;
+  background-color: rgb(255,0,0);
+}
+.box-list {
+  width: 50%;
+}
+.box-map {
+  width: 20%;
+}
+.box li {
+  list-style-type: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: rgb(32,192,255);
+  color: rgb(255,255,255);
+  box-shadow: 0 2px 5px rgb(128,128,128);
+</style>
 <head>
-<title> Home </title>
+<title>Home</title>
 </head>
-<body stlye = "background-color:azure">
-<h1 style = "color:grey"> Test </h1>
-<p> This will be the main page for the website </p>
+<body style = "background-color: azure">
+<h1 style = "color:grey">Test</h1>
+<p>This will be the main page for the website</p>
+<div class = "box-filter">
+  <li>1</li>
+  <li>a</li>
+</div>
+<div class = "box-list">
+  <li>I smart</li>
+</div>
+<div class = "box-map">
+  <li>Map</li>
+</div>
 </body>
 </html>
+<script>
+</script>

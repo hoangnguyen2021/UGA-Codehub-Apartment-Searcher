@@ -1,1 +1,1 @@
-//this might work
+document.getElementById("test").value = "After";

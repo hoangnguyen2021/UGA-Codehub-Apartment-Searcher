@@ -12,4 +12,8 @@ function initMap() {
     position: UGA,
     map: map,
   });
+
+  function showMarker() {
+
+  };
 }

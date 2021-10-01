@@ -8,4 +8,12 @@
   border: 2px solid black;
   width: 30%;
 }
+.list li {
+  list-style-type: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: rgb(32,192,255);
+  color: rgb(255,255,255);
+  box-shadow: 0 2px 5px rgb(128,128,128);
+}
 </style>

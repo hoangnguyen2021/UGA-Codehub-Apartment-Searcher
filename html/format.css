@@ -1,0 +1,16 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+.effect {
+  border-style: solid;
+  border-width: 15px;
+  border-color: rgb(224,224,224);
+  background-color: white;
+}
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>

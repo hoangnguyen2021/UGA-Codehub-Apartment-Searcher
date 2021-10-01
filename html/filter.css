@@ -1,0 +1,12 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+.filter {
+  float: left;
+  padding: 10px;
+  border: 2px solid black;
+  width: 30%;
+  background-color: rgb(255,0,0);
+}
+</style>

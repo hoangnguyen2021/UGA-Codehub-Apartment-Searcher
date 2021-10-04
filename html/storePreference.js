@@ -1,4 +1,6 @@
 function  storePreference() {
+
+    alert("The button was pressed and preferences were stored");
     var plist = ["min", "max", "beds", "baths", "pet", "washdry", "dorm", "apartment"];
     var flist = []; // array of filter prefrences
 

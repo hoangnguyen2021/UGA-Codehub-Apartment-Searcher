@@ -9,7 +9,7 @@
     <link rel = "stylesheet" type = "text/css" href = "style.css">
     <script src = "list.js" type = "text/javascript"></script>
     <script src = "map.js" type = "text/javascript"></script>
-    <script src = "storePreference.js" type = "text/javascript"></script>
+    <script src = "filter.js" type = "text/javascript"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABOpPePTTJCcXkxufAgUTuvVkIfoS_q7Q&callback=initMap&libraries=&v=weekly"></script>
     <title>Home</title>
   </head>
@@ -39,6 +39,7 @@
         <input type="checkbox" id="apartment">
         <label for="apartment">Apartment</label><br>
         <button onclick="storePreference()">Filter</button>
+        <button onclick="clearPrefernce()">Clear Filter</button>
       </div>
       <div class = "list">
         <button onclick = "function1()">Press me please</button>

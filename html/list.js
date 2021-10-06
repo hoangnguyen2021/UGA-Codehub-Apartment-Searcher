@@ -1,5 +1,4 @@
 var apartments = [];
-var a = 0;
 apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place"));
 apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place"));
 apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down"));
@@ -11,12 +10,19 @@ function Apartment(id, name, link, description) {
   this.link = link;
   this.description = description;
 }
-function function1() {
+function loadList() {
+  var a = 0;
+  while (a < apartments.length) {
+    createApartment(a);
+    a = a + 1;
+  }
+}
+function createApartment(number) {
   var list = document.getElementById("list");
   
   var divElement = document.createElement("div");
   
-  divElement.id = apartments[a].id;
+  divElement.id = apartments[number].id;
   divElement.classList.add("detail");
   
   item = document.createElement("input");
@@ -25,7 +31,7 @@ function function1() {
   divElement.appendChild(item);
   
   item = document.createElement("button");
-  item.innerHTML = " " + apartments[a].name;
+  item.innerHTML = apartments[number].name;
   item.type = "button";
   item.classList.add("name");
   item.addEventListener("click", function() {
@@ -44,16 +50,15 @@ function function1() {
   content.classList.add("content");
   
   item = document.createElement("a");
-  item.innerHTML = apartments[a].link;
-  item.href = apartments[a].link;
+  item.innerHTML = apartments[number].link;
+  item.href = apartments[number].link;
   
   content.appendChild(item);
   
   item = document.createElement("p");
-  item.innerHTML = apartments[a].description;
+  item.innerHTML = apartments[number].description;
   
   content.appendChild(item);
   divElement.appendChild(content);
   list.appendChild(divElement);
-  a = a + 1;
 }

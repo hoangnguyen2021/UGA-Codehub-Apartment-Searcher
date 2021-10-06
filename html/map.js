@@ -1,5 +1,5 @@
 // Initialize and add the map
-function initMap(...positions) {
+function initMap(positions) {
   // The location of UGA
   const UGA = { lat: 33.9558, lng: -83.3773};
   // The map, centered at UGA
@@ -24,6 +24,5 @@ function initMap(...positions) {
 function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }
   var position2 = {lat: 33.9598, lng: -83.3744};
-  initMap(position1, position2);
+  initMap([position1, position2]);
 }
-

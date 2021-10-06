@@ -1,14 +1,16 @@
 var apartments = [];
-apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place"));
-apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place"));
-apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down"));
-apartments.push(new Apartment("d", "Mary Ott", "www.coolmath.com", "Affordable"));
-apartments.push(new Apartment("e", "Other fake name", "www.website?.com", "Made of baby tears"));
-function Apartment(id, name, link, description) {
+apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place", {lat: 33.9598, lng: -83.370}, false));
+apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place", {lat: 33.9598, lng: -83.371}, false));
+apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down", {lat: 33.9598, lng: -83.372}, false));
+apartments.push(new Apartment("d", "Mary Ott", "www.coolmath.com", "Affordable", {lat: 33.9598, lng: -83.373}, false));
+apartments.push(new Apartment("e", "Fake name", "www.website?.com", "For the rich", {lat: 33.9598, lng: -83.374}, false));
+function Apartment(id, name, link, description, position, onMap) {
   this.id = id;
   this.name = name;
   this.link = link;
   this.description = description;
+  this.position = position;
+  this.onMap = onMap;
 }
 function loadList() {
   var a = 0;
@@ -17,8 +19,8 @@ function loadList() {
     a = a + 1;
   }
 }
-var a = 0;
 function function1() {
+  var a = 0;
   if (a == 0) {
     displayApartment(false, 1);
   }
@@ -29,6 +31,18 @@ function function1() {
     displayApartment(true, 1);
   }
   a = a + 1;
+}
+function showMap(input) {
+  apartments[input].onMap = !apartments[input].onMap;
+  var a = 0;
+  var mList = [];
+  while (a < apartments.length) {
+    if (apartments[a].onMap) {
+      mList.push(apartments[a].position);
+    }
+    a = a + 1;
+  }
+  initMap(mList);
 }
 function displayApartment(boolean, number) {
   if (boolean) {
@@ -48,6 +62,9 @@ function createApartment(number) {
   item = document.createElement("input");
   item.type = "checkbox";
   item.classList.add("check");
+  item.addEventListener("click", function() {
+    showMap(number);
+  });
   divElement.appendChild(item);
   
   item = document.createElement("button");

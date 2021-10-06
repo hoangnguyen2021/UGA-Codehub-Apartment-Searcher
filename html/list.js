@@ -34,6 +34,11 @@ function function1() {
 }
 function showMap(input) {
   apartments[input].onMap = !apartments[input].onMap;
+  if (apartments[input].onMap) {
+    document.getElementById("checkbox" + apartments[input].id).classList.add("shown");
+  } else {
+    document.getElementById("checkbox" + apartments[input].id).classList.remove("shown");
+  }
   var a = 0;
   var mList = [];
   while (a < apartments.length) {
@@ -59,10 +64,11 @@ function createApartment(number) {
   divElement.id = apartments[number].id;
   divElement.classList.add("detail");
   
-  item = document.createElement("input");
-  item.type = "checkbox";
+  item = document.createElement("button");
+  item.id = "checkbox" + apartments[number].id;
   item.classList.add("check");
   item.addEventListener("click", function() {
+    this.classList.toggle("shown");
     showMap(number);
   });
   divElement.appendChild(item);

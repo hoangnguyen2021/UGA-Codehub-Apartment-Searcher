@@ -17,6 +17,7 @@
   box-shadow: 0 2px 5px rgb(128,128,128);
 }
 .detail {
+  display: block;
   border: 1px solid black;
 }
 .check {

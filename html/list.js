@@ -1,9 +1,9 @@
 var apartments = [];
-apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place", 300, 2, 3,  {lat: 33.9598, lng: -83.370}, false));
-apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place", {lat: 33.9598, lng: -83.371}, false));
-apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down", {lat: 33.9598, lng: -83.372}, false));
-apartments.push(new Apartment("d", "Mary Ott", "www.coolmath.com", "Affordable", {lat: 33.9598, lng: -83.373}, false));
-apartments.push(new Apartment("e", "Fake name", "www.website?.com", "For the rich", {lat: 33.9598, lng: -83.374}, false));
+apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place", 300, 2, 3, false, true, false, false, {lat: 33.9598, lng: -83.370}, false));
+apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place", 400, 1, 2, true, true, true, true, {lat: 33.9598, lng: -83.371}, false));
+apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down", 350, 2, 3, true, false, false, true, {lat: 33.9598, lng: -83.372}, false));
+apartments.push(new Apartment("d", "Mary Ott", "www.coolmath.com", "Affordable", 476, 3, 2, true, true, false, true, {lat: 33.9598, lng: -83.373}, false));
+apartments.push(new Apartment("e", "Fake name", "www.website?.com", "For the rich", 100, 3, 3, false, false, true, true, {lat: 33.9598, lng: -83.374}, false));
 function Apartment(id, name, link, description, position, onMap) {
   this.id = id;
   this.name = name;

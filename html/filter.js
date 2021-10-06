@@ -5,16 +5,23 @@ var plist = ["min", "max", "beds", "baths", "pet", "washdry", "dorm", "apartment
 
 function  storePreference() {
 
-    alert("The button was pressed and preferences were stored"); // for testing
     for (var i = 0; i < plist.length; i++) {
         var x = document.getElementById(plist[i]);
         if (x.type == "text") {
-            flist[i] = x.value;
+            if (x.value.length == 0) {
+                if (x.id == "min") {
+                    flist[i] = 0;
+                } else if (x.id == "max") {
+                    flist[i] = 10_000;
+                } else {
+                    flist[i] = 0;
+                }
+            }
         } else {
             flist[i] = x.checked == true ? true : false;
         }
     }
-    
+
     for (var i = 0; i < flist.length; i++) {
         alert(flist[i]);
     }

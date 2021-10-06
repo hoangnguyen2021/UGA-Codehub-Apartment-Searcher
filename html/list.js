@@ -17,6 +17,26 @@ function loadList() {
     a = a + 1;
   }
 }
+var a = 0;
+function function1() {
+  if (a == 0) {
+    displayApartment(false, 1);
+  }
+  if (a == 1) {
+    displayApartment(false, 2);
+  }
+  if (a == 2) {
+    displayApartment(true, 1);
+  }
+  a = a + 1;
+}
+function displayApartment(boolean, number) {
+  if (boolean) {
+    document.getElementById(apartments[number].id).style.display = "block";
+  } else {
+    document.getElementById(apartments[number].id).style.display = "none";
+  }
+}
 function createApartment(number) {
   var list = document.getElementById("list");
   

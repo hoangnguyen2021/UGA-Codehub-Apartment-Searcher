@@ -1,5 +1,5 @@
 var apartments = [];
-apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place", {lat: 33.9598, lng: -83.370}, false));
+apartments.push(new Apartment("a", "Worst Western", "www.here.com", "Big place", 300, 2, 3,  {lat: 33.9598, lng: -83.370}, false));
 apartments.push(new Apartment("b", "La Keenta", "www.there.com", "Tiny place", {lat: 33.9598, lng: -83.371}, false));
 apartments.push(new Apartment("c", "Holiday Out", "www.este.com", "Broken down", {lat: 33.9598, lng: -83.372}, false));
 apartments.push(new Apartment("d", "Mary Ott", "www.coolmath.com", "Affordable", {lat: 33.9598, lng: -83.373}, false));

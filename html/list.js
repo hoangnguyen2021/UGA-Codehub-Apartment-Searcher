@@ -72,12 +72,7 @@ function createApartment(number) {
   item.classList.add("name");
   item.addEventListener("click", function() {
     this.classList.toggle('is-open');
-    var content = this.nextElementSibling;
-    if (content.style.display == "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
+    this.nextElementSibling.classList.toggle("is-open");
   });
   
   divElement.appendChild(item);

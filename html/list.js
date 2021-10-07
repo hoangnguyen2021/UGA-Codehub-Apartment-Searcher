@@ -61,6 +61,11 @@ function createApartment(number) {
   item = document.createElement("button");
   item.classList.add("check");
   item.addEventListener("click", function() {
+    if (apartments[number].onMap) {
+      this.innerHTML = "";
+    } else {
+      this.innerHTML = "&#10003";
+    }
     this.classList.toggle("shown");
     showMap(number);
   });
@@ -72,7 +77,12 @@ function createApartment(number) {
   item.classList.add("name");
   item.addEventListener("click", function() {
     this.classList.toggle('is-open');
-    this.nextElementSibling.classList.toggle("is-open");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
   });
   
   divElement.appendChild(item);

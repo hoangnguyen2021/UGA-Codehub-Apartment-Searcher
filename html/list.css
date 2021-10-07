@@ -11,57 +11,70 @@
 .list li {
   list-style-type: none;
   padding: 10px;
-  margin-bottom: 5px;
-  background-color: rgb(32,192,255);
-  color: rgb(255,255,255);
+  background-color: rgb(235,235,225);
   box-shadow: 0 2px 5px rgb(128,128,128);
 }
 .detail {
+  line-height: 0.75;
   display: block;
-  border: 1px solid black;
+  background-image: linear-gradient(white, whitesmoke);
+  background-repeat: repeat-y;
+  background-size: 40px 40px;
+}
+.list li button {
+  background-image: linear-gradient(white, whitesmoke);
 }
 .check {
   width: 40px;
   height: 40px;
-  background-color: whitesmoke;
   border: none;
-  outline: none;
-  text-align: center;
-  font-size: 30;
   color: #444;
   cursor: pointer;
-  content: "";
-}
-.check:hover {
-  background-color: #ddd;
+  margin: 0px;
+  transition-duration: 0.25s;
 }
 .check.shown {
-  content: "X";
-  background-color: rgb(0,0,255);
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: 3px solid black;
+  padding: 0px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.check:hover {
+  filter: brightness(85%);
 }
 .name {
   float: right;
   width: calc(100% - 40px);
   height: 40px;
-  background-color: whitesmoke;
   border: none;
   outline: none;
   text-align: left;
   font-size: 18px;
   color: #444;
   cursor: pointer;
+  transition-duration: 0.25s;
 }
 .name:hover {
-  background-color: #ddd;
+  filter: brightness(85%);
 }
 .name:after {
-  content: "+";
   float: right;
+  font-weight: bold;
+  font-size: 20px;
+  content: "\002B";
 }
 .name.is-open:after {
-  content: "-";
+  content: "\2212";
 }
 .content {
-  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition-duration: 0.25s;
+  background-color: whitesmoke;
 }
 </style>

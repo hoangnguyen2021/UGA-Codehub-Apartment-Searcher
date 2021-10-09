@@ -1,25 +1,29 @@
-#What is this?
+# What is this?
+
 a short example of what the code for the backend might look like
 
-#how do i run it?
+# how do i run it?
+
 make sure you have java 11 installed. open this folder in cmd/terminal.
 
-for windows run:
+for windows run: 
 mvnw spring-boot:run
 
-for mac/linux run:
+for mac/linux run: 
 ./mvnw spring-boot:run
 
 wait a moment and it should run
 
-#what does it do?
+# what does it do?
+
 it is a small RESTful API you can call. to see this in your browser, go to:
 
 localhost:8080
 
 if you get something about it being a fallback page, its running correctly. currently there are two things implemented in this demo
 
-#price sorting
+## price sorting
+
 you can get a list of the example appartments under X dollars. the default is 1000. to see the default, go to:
 
 localhost:8080/price
@@ -30,7 +34,8 @@ localhost:8080/price?price=400
 
 see? very neat
 
-#pets
+## pets
+
 same thing as above but for pets. default value is true
 
 localhost:8080/pets

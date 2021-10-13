@@ -3,26 +3,33 @@
   box-sizing: border-box;
 }
 .list {
+  font-family: "Fira Sans";
   float: left;
-  padding: 10px;
-  border: 2px solid black;
+  padding: 0px;
   width: 30%;
 }
 .list li {
+  font-weight: normal;
+  letter-spacing: 0px;
+  text-transform: none;
+  width: 100%;
   list-style-type: none;
-  padding: 10px;
-  background-color: rgb(235,235,225);
-  box-shadow: 0 2px 5px rgb(128,128,128);
+  background-color: rgb(230,35,60);
 }
 .detail {
   line-height: 0.75;
   display: block;
-  background-image: linear-gradient(white, whitesmoke);
+  background-image: linear-gradient(rgb(230,35,60), rgb(220,30,53));
   background-repeat: repeat-y;
   background-size: 40px 40px;
 }
 .list li button {
-  background-image: linear-gradient(white, whitesmoke);
+  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: whitesmoke;
+  background-image: linear-gradient(rgb(230,35,60), rgb(220,30,53));
 }
 .check {
   width: 40px;
@@ -38,7 +45,7 @@
   height: 40px;
   font-size: 25px;
   border-radius: 10px;
-  border: 3px solid black;
+  border: 3px solid whitesmoke;
   padding: 0px;
   text-align: center;
   vertical-align: middle;
@@ -72,9 +79,10 @@
   content: "\2212";
 }
 .content {
+  padding: 0px;
   overflow: hidden;
   max-height: 0;
-  transition-duration: 0.25s;
-  background-color: whitesmoke;
+  transition: max-height 0.25s;
+  background-color: rgb(220,30,53);
 }
 </style>

@@ -1,7 +1,7 @@
-function loadList() {
+function loadList(list) {
   var a = 0;
   while (a < apartments.length) {
-    createApartment(a);
+    createApartment(a, list);
     a = a + 1;
   }
 }
@@ -12,14 +12,6 @@ function function1() {
 }
 function showMap(input) {
   apartments[input].onMap = !apartments[input].onMap;
-  var a = 0;
-  var mList = [];
-  while (a < apartments.length) {
-    if (apartments[a].onMap) {
-      mList.push(apartments[a].position);
-    }
-    a = a + 1;
-  }
   initMap();
 }
 function displayApartment(number) {
@@ -29,17 +21,21 @@ function displayApartment(number) {
     document.getElementById(apartments[number].id).style.display = "none";
   }
 }
-function createApartment(number) {
-  var list = document.getElementById("list");
+function createApartment(number, list) {
+  //var list = document.getElementById("list");
   
   var divElement = document.createElement("div");
   
   divElement.id = apartments[number].id;
   divElement.classList.add("detail");
   
-  item = document.createElement("button");
-  item.classList.add("check");
-  item.addEventListener("click", function() {
+  var itema = document.createElement("button");
+  itema.classList.add("check");
+  if (apartments[number].onMap) {
+    itema.innerHTML = "&#10003";
+    itema.classList.toggle("shown");
+  }
+  itema.addEventListener("click", function() {
     if (apartments[number].onMap) {
       this.innerHTML = "";
     } else {
@@ -48,13 +44,13 @@ function createApartment(number) {
     this.classList.toggle("shown");
     showMap(number);
   });
-  divElement.appendChild(item);
+  divElement.appendChild(itema);
   
-  item = document.createElement("button");
-  item.innerHTML = apartments[number].name;
-  item.type = "button";
-  item.classList.add("name");
-  item.addEventListener("click", function() {
+  var itemb = document.createElement("button");
+  itemb.innerHTML = apartments[number].name;
+  itemb.type = "button";
+  itemb.classList.add("name");
+  itemb.addEventListener("click", function() {
     this.classList.toggle('is-open');
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
@@ -63,22 +59,22 @@ function createApartment(number) {
       content.style.maxHeight = content.scrollHeight + "px";
     }
   });
-  
-  divElement.appendChild(item);
+  divElement.appendChild(itemb);
   
   var content = document.createElement("div");
   content.classList.add("content");
   
-  item = document.createElement("a");
-  item.innerHTML = apartments[number].link;
-  item.href = apartments[number].link;
+  var itemc = document.createElement("a");
+  itemc.innerHTML = apartments[number].link;
+  itemc.href = apartments[number].link;
   
-  content.appendChild(item);
+  content.appendChild(itemc);
   
-  item = document.createElement("p");
-  item.innerHTML = apartments[number].description;
+  var itemd = document.createElement("p");
+  itemd.innerHTML = apartments[number].description;
   
-  content.appendChild(item);
+  content.appendChild(itemd);
   divElement.appendChild(content);
+
   list.appendChild(divElement);
 }

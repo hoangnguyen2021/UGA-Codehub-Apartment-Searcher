@@ -1,8 +1,54 @@
 // Initialize and add the map
 const UGA = {lat: 33.9558, lng: -83.3773};
 var center = UGA;
+function CenterControl(controlDiv, map) {
+  // Set CSS for the control border.
+  const controlUI = document.createElement("div");
+  controlUI.style.backgroundColor = "#fff";
+  controlUI.style.border = "2px solid #fff";
+  controlUI.style.borderRadius = "3px";
+  controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
+  controlUI.style.cursor = "pointer";
+  controlUI.style.margin = "4px";
+  controlUI.style.textAlign = "center";
+  controlUI.title = "Click to recenter the map";
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  const controlText = document.createElement("div");
+  controlText.style.color = "rgb(25,25,25)";
+  controlText.style.fontFamily = "Roboto,Arial,sans-serif";
+  controlText.style.fontSize = "16px";
+  controlText.style.lineHeight = "38px";
+  controlText.style.paddingLeft = "5px";
+  controlText.style.paddingRight = "5px";
+  controlText.innerHTML = "Center Map";
+  controlUI.appendChild(controlText);
+
+  controlUI.addEventListener("mouseover", () => {
+    controlUI.style.filter = "brightness(90%)";
+  });
+  controlUI.addEventListener("mouseout", () => {
+    controlUI.style.filter = "brightness(100%)";
+  });
+  controlUI.addEventListener("click", () => {
+    map.setCenter(UGA);
+  });
+}
+function SidebarControl(controlDiv, map) {
+  const sidebar = document.createElement("div");
+  sidebar.classList.add("list");
+  sidebar.style.height = "296px";
+  sidebar.style.width = "300px";
+  controlDiv.appendChild(sidebar);
+  const controlText = document.createElement("li");
+  controlText.id = "list";
+  sidebar.appendChild(controlText);
+  loadList(controlText);
+}
 function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
+    mapTypeControl: false,
     zoom: 13,
     center: center,
   });
@@ -18,11 +64,14 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow({
     content: "Home Sweet Home",
   });
-  marker.addListener("click", () => {
+  marker.addListener("mouseover", () => {
     infowindow.open({
       anchor: marker,
       map,
     });
+  });
+  marker.addListener("mouseout", () => {
+    infowindow.close();
   });
   var a = 0;
   while (a < apartments.length) {
@@ -34,14 +83,25 @@ function initMap() {
     const infowindow = new google.maps.InfoWindow({
       content: apartments[a].name,
     });
-    marker.addListener("click", () => {
+    marker.addListener("mouseover", () => {
       infowindow.open({
         anchor: marker,
         map,
       });
     });
+    marker.addListener("mouseout", () => {
+      infowindow.close();
+    });
     a = a + 1;
   }
+
+  const sidebarControlDiv = document.createElement("div");
+  SidebarControl(sidebarControlDiv, map);
+  map.controls[google.maps.ControlPosition.LEFT_CENTER].push(sidebarControlDiv);
+
+  const centerControlDiv = document.createElement("div");
+  CenterControl(centerControlDiv, map);
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 }
 function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }

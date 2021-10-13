@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 body {
-  border-style: solid;
-  border-width: 15px;
-  border-color: rgb(224,224,224);
   background-color: white;
 }
 .row::after{

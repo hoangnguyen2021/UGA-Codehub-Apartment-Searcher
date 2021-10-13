@@ -35,18 +35,16 @@ function CenterControl(controlDiv, map) {
     map.setCenter(UGA);
   });
 }
-function SidebarControl(controlDiv, map, markers) {
-  const sidebar = document.createElement("div");
+function SidebarControl(map) {
+  const sidebar = document.getElementById("list");
   sidebar.classList.add("list");
   sidebar.style.height = "400px";
   sidebar.style.width = "300px";
-  controlDiv.appendChild(sidebar);
   const controlText = document.createElement("li");
-  controlText.id = "list";
   sidebar.appendChild(controlText);
   loadList(controlText, map);
 }
-function initMap() {
+function initMap() {  
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
     zoom: 13,
@@ -102,13 +100,11 @@ function initMap() {
     }
     a = a + 1;
   }
-  const sidebarControlDiv = document.createElement("div");
-  SidebarControl(sidebarControlDiv, map);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(sidebarControlDiv);
-
   const centerControlDiv = document.createElement("div");
   CenterControl(centerControlDiv, map);
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+
+  SidebarControl(map);
 }
 function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }

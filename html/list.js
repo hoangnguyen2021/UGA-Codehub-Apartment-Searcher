@@ -10,10 +10,6 @@ function function1() {
   displayApartment(0);
   //var flist = showPreferences();
 }
-function showMap(input) {
-  apartments[input].onMap = !apartments[input].onMap;
-  initMap();
-}
 function displayApartment(number) {
   if (apartments[number].meets) {
     document.getElementById(apartments[number].id).style.display = "block";
@@ -31,10 +27,6 @@ function createApartment(number, list) {
   
   var itema = document.createElement("button");
   itema.classList.add("check");
-  if (apartments[number].onMap) {
-    itema.innerHTML = "&#10003";
-    itema.classList.toggle("shown");
-  }
   itema.addEventListener("click", function() {
     if (apartments[number].onMap) {
       this.innerHTML = "";
@@ -42,7 +34,7 @@ function createApartment(number, list) {
       this.innerHTML = "&#10003";
     }
     this.classList.toggle("shown");
-    showMap(number);
+    apartments[number].onMap = !apartments[number].onMap;
   });
   divElement.appendChild(itema);
   

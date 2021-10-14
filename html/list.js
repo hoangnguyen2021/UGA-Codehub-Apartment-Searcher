@@ -1,3 +1,6 @@
+/*
+ * This function will create all the apartments.
+ */
 function loadList(list) {
   var a = 0;
   while (a < apartments.length) {
@@ -5,15 +8,26 @@ function loadList(list) {
     a = a + 1;
   }
 }
-function function1() {
-  apartments[0].meets = !apartments[0].meets;
-  displayApartment(0);
-  //var flist = showPreferences();
+/*
+ * This will refresh all apartments being shown for the list.
+ * Any apartment with meets will be shown.
+ */
+function refresh() {
+  var a = 0;
+  while (a < apartments.length) {
+    displayApartment(a);
+    a = a + 1;
+  }
 }
+/* 
+ * This will display an apartment properly.
+ * It also makes sure no marker is on when it is displayed. (At least it should. I doubt it will.)
+ */
 function displayApartment(number) {
   if (apartments[number].meets) {
     document.getElementById(apartments[number].id).style.display = "block";
   } else {
+    apartments[number].onMap = false;
     document.getElementById(apartments[number].id).style.display = "none";
   }
 }

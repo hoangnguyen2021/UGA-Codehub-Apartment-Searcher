@@ -32,7 +32,7 @@ function CenterControl(controlDiv, map) {
     controlUI.style.filter = "brightness(100%)";
   });
   controlUI.addEventListener("click", () => {
-    map.setCenter(UGA);
+    map.panTo(UGA);
   });
 }
 function SidebarControl(map) {
@@ -48,11 +48,8 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
     zoom: 13,
-    center: center,
+    center: UGA,
   });
-  map.addListener("center_changed", () => {
-    center = map.getCenter();
-  })
   // The marker, positioned at UGA
   const marker = new google.maps.Marker({
     position: UGA,

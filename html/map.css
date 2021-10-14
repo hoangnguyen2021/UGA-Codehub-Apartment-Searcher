@@ -5,7 +5,7 @@
   position: relative;
   overflow: hidden;
   float: left;
-  width: 40%;
+  width: calc(70% - 300px);
 }
 .map:before {
   position: absolute;

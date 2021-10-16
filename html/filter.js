@@ -22,6 +22,11 @@ function  storePreference() {
         }
     }
 
+    for (var i = 0; i < apartments.length; i++) {
+        meets(apartments[i]);
+        alert(apartments[i].meets);
+    }
+
     return flist
 } // storePreference
 
@@ -36,4 +41,10 @@ function clearPrefernce() {
     }
 
     flist = [];
+}
+
+function meets(apartment) { 
+    if (apartment.price < flist[0] || aoartment.price > flist[1]) {
+        apartment.meets == false;
+    }
 }

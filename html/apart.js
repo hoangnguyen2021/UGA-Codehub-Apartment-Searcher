@@ -28,7 +28,7 @@ apartments.push(new Apartment(
   {lat: 33.9598, lng: -83.359},
   false,
   false,
-  false
+  true,
 ));
 apartments.push(new Apartment(
   "b",

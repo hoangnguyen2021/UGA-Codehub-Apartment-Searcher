@@ -41,18 +41,18 @@
         <label for="apartment">Apartment</label><br>
         <button onclick="storePreference()">Filter</button>
         <button onclick="clearPrefernce()">Clear Filter</button>
+        <button onclick="refresh()">Refresh</button>
       </div>
-      <div class = "list">
-        <button onclick = "function1()">Press me please</button>
-        <button onclick="showMarkers()">Show Selected Locations</button>
-        <br>
-      </div>
+      <div id = "list"></div>
       <style type="text/css">
         #map {
-          height: 300px;
+          height: 400px;
         }
       </style>
-      <div class = "map" id="map"></div>
+      <div class = "map">
+        <div id="map" class = "googleMap">
+        </div>
+      </div>
     </div>
     <div class = "row">
       <div class = "footer">

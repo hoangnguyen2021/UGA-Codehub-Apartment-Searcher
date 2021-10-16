@@ -22,16 +22,10 @@ function  storePreference() {
         }
     }
 
-    for (var i = 0; i < flist.length; i++) {
-        alert(flist[i]);
-    }
-
     return flist
 } // storePreference
 
 function clearPrefernce() {
-    
-    alert("Preferences were cleared"); // for testing
     for (var i = 0; i < plist.length; i++) {
         var x = document.getElementById(plist[i]);
         if (x.type == "text") {

@@ -73,13 +73,30 @@ function createApartment(number, list) {
   var itemc = document.createElement("a");
   itemc.innerHTML = apartments[number].link;
   itemc.href = apartments[number].link;
-  
+
+
   content.appendChild(itemc);
   
   var itemd = document.createElement("p");
   itemd.innerHTML = apartments[number].description;
+
+  var iteme = document.createElement("p");
+  iteme.innerHTML = "$" + apartments[number].price;
+
+  var itemf = document.createElement("p");
+  itemf.innerHTML = apartments[number].bed + " Bed";
+
+  var itemg = document.createElement("p");
+  itemg.innerHTML = apartments[number].bath + " Bath";
+
+  var itemh = document.createElement("p");
+  itemh.innerHTML = apartments[number].dorm == true ? "Dorm" : "Apartment";
   
   content.appendChild(itemd);
+  content.appendChild(iteme);
+  content.appendChild(itemf);
+  content.appendChild(itemg);
+  content.appendChild(itemh);
   divElement.appendChild(content);
 
   list.appendChild(divElement);

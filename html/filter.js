@@ -33,6 +33,18 @@ function  storePreference() {
         if (apartments[i].price < flist[0] || apartments[i].price > flist[1]) {
             apartments[i].meets = false;
         }
+
+        if (apartments[i].bed < flist[2] || apartments[i].bath < flist[3]) {
+            apartments[i].meets = false;
+        }
+
+        if (apartments[i].dorm == false && flist[6] == true) {
+            apartments[i].meets = false;
+        }
+
+        if (apartments[i].apartment == false && flist[7] == true) {
+            apartments[i].meets = false;
+        }
     }
 
     return flist

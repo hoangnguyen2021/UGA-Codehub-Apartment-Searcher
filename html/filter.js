@@ -16,15 +16,23 @@ function  storePreference() {
                 } else {
                     flist[i] = 0;
                 }
+            } else {
+                flist[i] = x.value;
             }
         } else {
             flist[i] = x.checked == true ? true : false;
         }
     }
 
+    if (flist[6] == true && flist[7] == true) {
+        clearPrefernce();
+        alert("Cannot search for a dorm and and apartment");
+    }
+
     for (var i = 0; i < apartments.length; i++) {
-        meets(apartments[i]);
-        alert(apartments[i].meets);
+        if (apartments[i].price < flist[0] || apartments[i].price > flist[1]) {
+            apartments[i].meets = false;
+        }
     }
 
     return flist
@@ -40,11 +48,11 @@ function clearPrefernce() {
         }
     }
 
-    flist = [];
-}
-
-function meets(apartment) { 
-    if (apartment.price < flist[0] || aoartment.price > flist[1]) {
-        apartment.meets == false;
+    for (var i = 0; i < apartments.length; i++) {
+        apartments[i].meets = true;
     }
+
+    refresh();
+
+    flist = [];
 }

@@ -32,8 +32,6 @@ function displayApartment(number) {
   }
 }
 function createApartment(number, list) {
-  //var list = document.getElementById("list");
-  
   var divElement = document.createElement("div");
   
   divElement.id = apartments[number].id;

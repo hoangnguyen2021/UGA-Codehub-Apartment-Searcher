@@ -30,6 +30,7 @@ function  storePreference() {
     }
 
     for (var i = 0; i < apartments.length; i++) {
+        apartments[i].meets = true;
         if (apartments[i].price < flist[0] || apartments[i].price > flist[1]) {
             apartments[i].meets = false;
         }
@@ -46,8 +47,7 @@ function  storePreference() {
             apartments[i].meets = false;
         }
     }
-
-    return flist
+    refresh();
 } // storePreference
 
 function clearPrefernce() {

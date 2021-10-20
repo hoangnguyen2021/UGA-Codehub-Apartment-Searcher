@@ -1,12 +1,10 @@
-<style>
 * {
   box-sizing: border-box;
 }
 .filter {
+  z-index: -1;
   float: left;
   padding: 10px;
-  border: 2px solid black;
   width: 30%;
   background-color: white;
 }
-</style>

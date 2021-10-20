@@ -16,22 +16,41 @@ function  storePreference() {
                 } else {
                     flist[i] = 0;
                 }
+            } else {
+                flist[i] = x.value;
             }
         } else {
             flist[i] = x.checked == true ? true : false;
         }
     }
 
-    for (var i = 0; i < flist.length; i++) {
-        alert(flist[i]);
+    if (flist[6] == true && flist[7] == true) {
+        clearPrefernce();
+        alert("Cannot search for a dorm and and apartment");
     }
 
-    return flist
+    for (var i = 0; i < apartments.length; i++) {
+        apartments[i].meets = true;
+        if (apartments[i].price < flist[0] || apartments[i].price > flist[1]) {
+            apartments[i].meets = false;
+        }
+
+        if (apartments[i].bed < flist[2] || apartments[i].bath < flist[3]) {
+            apartments[i].meets = false;
+        }
+
+        if (apartments[i].dorm == false && flist[6] == true) {
+            apartments[i].meets = false;
+        }
+
+        if (apartments[i].apartment == false && flist[7] == true) {
+            apartments[i].meets = false;
+        }
+    }
+    refresh();
 } // storePreference
 
 function clearPrefernce() {
-    
-    alert("Preferences were cleared"); // for testing
     for (var i = 0; i < plist.length; i++) {
         var x = document.getElementById(plist[i]);
         if (x.type == "text") {
@@ -40,6 +59,12 @@ function clearPrefernce() {
             x.checked = false;
         }
     }
+
+    for (var i = 0; i < apartments.length; i++) {
+        apartments[i].meets = true;
+    }
+
+    refresh();
 
     flist = [];
 }

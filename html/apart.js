@@ -26,8 +26,8 @@ fetch('./apartments_search.json')
         results[i].url,
         "Test",
         results[i].rent.min,
-        1,
-        2,
+        getBed(results[i].beds),
+        getBath(results[i].baths),
         true,
         false,
         true,
@@ -38,6 +38,20 @@ fetch('./apartments_search.json')
       ));
     }
   })
+
+  function getBed(jsonBed) {
+    var stringarr = jsonBed.split("");
+    return stringarr[0];
+  }
+
+  function getBath(jsonBath) {
+    var stringarr = jsonBath.split("");
+    return stringarr[0];
+  }
+
+  function getLatAndLong(jsonAddress) {
+
+  }
 /*apartments.push(new Apartment(
   "a", "Worst Western",
   "www.here.com",

@@ -16,7 +16,7 @@ function Apartment(id, name, link, description, price, bed, bath, petFriendly, d
 }
 var apartments = [];
 
-fetch('./apartments_search.json')
+/*fetch('./apartments_search.json')
   .then(results => results.json())
   .then(results => {
     for (var i = 0; i < results.length; i++) {
@@ -51,8 +51,10 @@ fetch('./apartments_search.json')
 
   function getLatAndLong(jsonAddress) {
 
-  }
-/*apartments.push(new Apartment(
+  } */
+
+// Apartment Objects for Testing
+apartments.push(new Apartment(
   "a", "Worst Western",
   "www.here.com",
   "Big place",
@@ -210,7 +212,7 @@ apartments.push(new Apartment(
   false,
   false,
   true
-)) */
+)) 
 
 
 

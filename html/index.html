@@ -11,6 +11,7 @@
     <script src = "map.js" type = "text/javascript"></script>
     <script src = "list.js" type = "text/javascript"></script>
     <script src = "filter.js" type = "text/javascript"></script>
+    <script src = "json.js" type = "text/javascript"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABOpPePTTJCcXkxufAgUTuvVkIfoS_q7Q&callback=initMap&libraries=&v=weekly"></script>
     <title>Home</title>
   </head>
@@ -41,6 +42,7 @@
         <label for="apartment">Apartment</label><br>
         <button onclick="storePreference()">Filter</button>
         <button onclick="clearPrefernce()">Clear Filter</button>
+        <button onclick="testJSON()">Test JSON</button>
       </div>
       <div id = "list"></div>
       <style type="text/css">

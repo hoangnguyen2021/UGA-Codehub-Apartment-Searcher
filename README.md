@@ -3,7 +3,7 @@ This is a website deisgned to help UGA students find student apartments and filt
 
 This is a Web-Application:
 
-This application requires Node.js to run a local server on your computer. This is because the apartment objects from the web scrapper are stored in a JSON format and in order to retrieve those objects you need to run a server instance, and we are broke college students and can't afford to host this on a server.
+This application requires Node.js to run a local server on your computer. This is because the apartment objects from the web scrapper are stored in a JSON (JavaScript Object Notation) format and in order to retrieve those objects you need to run a server instance, and we are broke college students and can't afford to host this on a server.
 
 Node.js setup instructions:
 

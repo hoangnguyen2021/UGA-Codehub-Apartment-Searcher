@@ -15,7 +15,30 @@ function Apartment(id, name, link, description, price, bed, bath, petFriendly, d
   this.meets = meets;
 }
 var apartments = [];
-apartments.push(new Apartment(
+
+fetch('./apartments_search.json')
+  .then(results => results.json())
+  .then(results => {
+    for (var i = 0; i < results.length; i++) {
+      apartments.push(new Apartment(
+        results[i].id,
+        results[i].propertyName,
+        results[i].url,
+        "Test",
+        results[i].rent.min,
+        1,
+        2,
+        true,
+        false,
+        true,
+        {lat: 33.9598, lng: -83.359},
+        false,
+        false,
+        true,
+      ));
+    }
+  })
+/*apartments.push(new Apartment(
   "a", "Worst Western",
   "www.here.com",
   "Big place",
@@ -173,4 +196,7 @@ apartments.push(new Apartment(
   false,
   false,
   true
-));
+)) */
+
+
+

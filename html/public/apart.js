@@ -32,7 +32,7 @@ fetch('./apartments_search.json')
         true,
         false,
         true,
-        codeAddress(results[i].location.fullAddress),
+        {lat: 33.9598, lng: -83.359},
         false,
         false,
         true,
@@ -51,7 +51,7 @@ fetch('./apartments_search.json')
   }
 
 //Apartment Objects for Testing
-
+/*
 apartments.push(new Apartment(
   "a", "Worst Western",
   "www.here.com",
@@ -210,7 +210,7 @@ apartments.push(new Apartment(
   false,
   false,
   true
-)) 
+)) */
 
 
 

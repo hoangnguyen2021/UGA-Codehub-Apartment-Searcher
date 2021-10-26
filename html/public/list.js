@@ -67,6 +67,10 @@ function createApartment(number, list) {
   });
   divElement.appendChild(itemb);
   
+  var itemx = document.createElement("p");
+  itemx.style.fontWeight = "bold";
+  itemx.innerHTML = apartments[number].name;
+
   var content = document.createElement("div");
   content.classList.add("content");
   
@@ -89,6 +93,7 @@ function createApartment(number, list) {
   //var itemh = document.createElement("p");
   //itemh.innerHTML = "\n" //apartments[number].dorm == true ? "Dorm" : "Apartment";
   
+  content.appendChild(itemx);
   content.appendChild(itemd);
   content.appendChild(iteme);
   content.appendChild(itemf);

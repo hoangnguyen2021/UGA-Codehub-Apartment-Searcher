@@ -69,11 +69,11 @@
   float: right;
   width: calc(100% - 40px);
   height: 40px;
+  overflow: hidden;
   border: none;
   outline: none;
   text-align: left;
   font-size: 18px;
-  color: #444;
   cursor: pointer;
   transition-duration: 0.25s;
 }
@@ -90,6 +90,7 @@
   content: "\2212";
 }
 .content {
+  font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
   padding: 0px;
   color: whitesmoke;
   overflow: hidden;

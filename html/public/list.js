@@ -59,8 +59,10 @@ function createApartment(number, list) {
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      content.style.paddingBottom = "0px";
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
+      content.style.paddingBottom = content.scrollHeight + 12 + "px";
     }
   });
   divElement.appendChild(itemb);
@@ -69,17 +71,14 @@ function createApartment(number, list) {
   content.classList.add("content");
   
   var itemc = document.createElement("a");
-  itemc.innerHTML = apartments[number].link;
+  itemc.innerHTML = "Link to Webpage";
   itemc.href = apartments[number].link;
-
-
-  content.appendChild(itemc);
   
   var itemd = document.createElement("p");
   itemd.innerHTML = apartments[number].description;
 
   var iteme = document.createElement("p");
-  iteme.innerHTML = "$" + apartments[number].price;
+  iteme.innerHTML = "Price: $" + apartments[number].price;
 
   var itemf = document.createElement("p");
   itemf.innerHTML = apartments[number].bed + " Bed";
@@ -87,14 +86,15 @@ function createApartment(number, list) {
   var itemg = document.createElement("p");
   itemg.innerHTML = apartments[number].bath + " Bath";
 
-  var itemh = document.createElement("p");
-  itemh.innerHTML = apartments[number].dorm == true ? "Dorm" : "Apartment";
+  //var itemh = document.createElement("p");
+  //itemh.innerHTML = "\n" //apartments[number].dorm == true ? "Dorm" : "Apartment";
   
   content.appendChild(itemd);
   content.appendChild(iteme);
   content.appendChild(itemf);
   content.appendChild(itemg);
-  content.appendChild(itemh);
+  content.appendChild(itemc);
+  //content.appendChild(itemh);
   divElement.appendChild(content);
 
   list.appendChild(divElement);

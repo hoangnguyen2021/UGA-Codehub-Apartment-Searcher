@@ -1,3 +1,4 @@
+var geocoder;
 // Initialize and add the map
 const UGA = {lat: 33.9558, lng: -83.3773};
 var center = UGA;
@@ -107,4 +108,15 @@ function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }
   var position2 = {lat: 33.9598, lng: -83.3744};
   initMap([position1, position2]);
+}
+
+function codeAddress(address) {
+  geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == 'OK') {
+      return results[i].geometry.location;
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }

@@ -1,3 +1,4 @@
+
 function Apartment(id, name, link, description, price, bed, bath, petFriendly, dorm, apartment, position, onMap, open, meets) {
   this.id = id;
   this.name = name;
@@ -16,7 +17,7 @@ function Apartment(id, name, link, description, price, bed, bath, petFriendly, d
 }
 var apartments = [];
 
-/*fetch('./apartments_search.json')
+fetch('./apartments_search.json')
   .then(results => results.json())
   .then(results => {
     for (var i = 0; i < results.length; i++) {
@@ -37,7 +38,7 @@ var apartments = [];
         true,
       ));
     }
-  })
+  }) 
 
   function getBed(jsonBed) {
     var stringarr = jsonBed.split("");
@@ -49,11 +50,8 @@ var apartments = [];
     return stringarr[0];
   }
 
-  function getLatAndLong(jsonAddress) {
-
-  } */
-
-// Apartment Objects for Testing
+//Apartment Objects for Testing
+/*
 apartments.push(new Apartment(
   "a", "Worst Western",
   "www.here.com",
@@ -212,7 +210,7 @@ apartments.push(new Apartment(
   false,
   false,
   true
-)) 
+)) */
 
 
 

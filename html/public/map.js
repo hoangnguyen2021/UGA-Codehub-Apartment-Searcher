@@ -72,8 +72,11 @@ function initMap() {
   var a = 0;
   while (a < apartments.length) {
     const number = a;
+    const lat = apartments[a].lat;
+    const lng = apartments[a].lng;
+    console.log(lng);
     const marker = new google.maps.Marker({
-      position: apartments[a].position,
+      position: {lat, lng},
       map,
       visible: apartments[number].onMap,
     });
@@ -108,15 +111,4 @@ function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }
   var position2 = {lat: 33.9598, lng: -83.3744};
   initMap([position1, position2]);
-}
-
-function codeAddress(address) {
-  geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == 'OK') {
-      return results[i].geometry.location;
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
 }

@@ -11,7 +11,7 @@
     <script src = "map.js" type = "text/javascript"></script>
     <script src = "list.js" type = "text/javascript"></script>
     <script src = "thefilter.js" type = "text/javascript"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABOpPePTTJCcXkxufAgUTuvVkIfoS_q7Q&callback=initMap&libraries=&v=weekly"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcK6plxgo_6bLdx-GhUCmNa7jjxuzC9is&callback=initMap&libraries=&v=weekly"></script>
     <title>Home</title>
   </head>
 <body onload = "loadList()">
@@ -41,6 +41,7 @@
         <label for="apartment">Apartment</label><br>
         <button onclick="storePreference()">Filter</button>
         <button onclick="clearPrefernce()">Clear Filter</button>
+        <button onclick="testLocations()">Test Locations</button>
       </div>
       <div id = "list"></div>
       <style type="text/css">
@@ -62,6 +63,5 @@
     <div class = "row">
       <p style = "color: rgb(0,0,255)">v 0.7</p>
     </div>
-    
   </body>
 </html>

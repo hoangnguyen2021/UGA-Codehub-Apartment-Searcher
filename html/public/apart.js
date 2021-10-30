@@ -1,5 +1,5 @@
 
-function Apartment(id, name, link, description, price, bed, bath, petFriendly, dorm, apartment, position, onMap, open, meets) {
+function Apartment(id, name, link, description, price, bed, bath, petFriendly, dorm, apartment, lat, lng, onMap, open, meets) {
   this.id = id;
   this.name = name;
   this.link = link;
@@ -10,7 +10,8 @@ function Apartment(id, name, link, description, price, bed, bath, petFriendly, d
   this.petFriendly = petFriendly;
   this.dorm = dorm;
   this.apartment = apartment;
-  this.position = position;
+  this.lat = lat;
+  this.lng = lng;
   this.onMap = onMap;
   this.open = open;
   this.meets = meets;
@@ -32,13 +33,47 @@ fetch('./apartments_search.json')
         true,
         false,
         true,
-        {lat: 33.9598, lng: -83.359},
+        getLat(results[i].location),
+        getLng(results[i].location),
         false,
         false,
         true,
       ));
     }
-  }) 
+  })
+
+  function getLat(location) {
+  
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+    address = location.streedAddress;
+    url = url + address + ",+" + location.city + ',+GA' + '&key=AIzaSyCcK6plxgo_6bLdx-GhUCmNa7jjxuzC9is';
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data.results[0].geometry.location.lat);
+      return data.results[0].geometry.location.lat;
+    })
+    .catch(function(error) {
+      alert(error);
+    });
+  } 
+
+  function getLng(location) {
+    var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+    address = location.streedAddress;
+    url = url + address + ",+" + location.city + ',+GA' + '&key=AIzaSyCcK6plxgo_6bLdx-GhUCmNa7jjxuzC9is';
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data.results[0].geometry.location.lng);
+      return data.results[0].geometry.location.lng;
+    })
+    .catch(function(error) {
+      alert(error);
+    });
+  }
 
   function getBed(jsonBed) {
     var stringarr = jsonBed.split("");

@@ -8,6 +8,13 @@ function loadList(list) {
     a = a + 1;
   }
 }
+
+function testLocations() {
+  for (var i = 0; i < apartments.length; i++) {
+    console.log(apartments[i].lat);
+    console.log(apartments[i].lng);
+  }
+}
 /*
  * This will refresh all apartments being shown for the list.
  * Any apartment with meets will be shown.

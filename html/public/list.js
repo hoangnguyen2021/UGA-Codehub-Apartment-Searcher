@@ -11,6 +11,8 @@ function loadList(list) {
 
 function testLocations() {
   for (var i = 0; i < apartments.length; i++) {
+    console.log(apartments[i].name);
+    console.log(apartments[i].link);
     console.log(apartments[i].lat);
     console.log(apartments[i].lng);
   }
@@ -108,6 +110,5 @@ function createApartment(number, list) {
   content.appendChild(itemc);
   //content.appendChild(itemh);
   divElement.appendChild(content);
-
   list.appendChild(divElement);
 }

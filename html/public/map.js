@@ -72,14 +72,17 @@ function initMap() {
   var a = 0;
   while (a < apartments.length) {
     const number = a;
-    const lat = apartments[a].lat;
-    const lng = apartments[a].lng;
+    var lat = apartments[a].lat;
+    console.log(lat);
+    var lng = apartments[a].lng;
     console.log(lng);
+    const position = {lat: lat, lng:lng}
     const marker = new google.maps.Marker({
-      position: {lat, lng},
-      map,
-      visible: apartments[number].onMap,
+      position: position,
+      map: map,
+      visible: true,
     });
+    console.log(marker);
     const infowindow = new google.maps.InfoWindow({
       content: apartments[a].name,
       shouldFocus: true,

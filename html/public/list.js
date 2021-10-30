@@ -41,6 +41,7 @@ function displayApartment(number) {
   }
 }
 function createApartment(number, list) {
+  list = document.getElementById("list");
   var divElement = document.createElement("div");
   
   divElement.id = apartments[number].id;
@@ -111,4 +112,5 @@ function createApartment(number, list) {
   //content.appendChild(itemh);
   divElement.appendChild(content);
   list.appendChild(divElement);
+
 }

@@ -70,6 +70,7 @@ function initMap() {
     infowindow.close();
   });
   var a = 0;
+  console.log(apartments.length);
   while (a < apartments.length) {
     const number = a;
     var lat = apartments[a].lat;
@@ -80,7 +81,7 @@ function initMap() {
     const marker = new google.maps.Marker({
       position: position,
       map: map,
-      visible: true,
+      visible: apartments[a].onMap
     });
     console.log(marker);
     const infowindow = new google.maps.InfoWindow({

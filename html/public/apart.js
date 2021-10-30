@@ -31,7 +31,7 @@ var lng;
 
 // This function creates all of the apartments objects and uses 
 // the google map api to get he latitutde and longitude
-function loadLocations() {
+function loadLocations(callback) {
   var i = 0;
   var j = 0; 
   fetch('./apartments_search.json')
@@ -89,6 +89,9 @@ function loadApartments() {
             false,
             true
           );
+          if (apartments.length == jsonResults.length) {
+            loadList();
+          }
         }
     })
   }

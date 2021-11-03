@@ -82,7 +82,7 @@ function loadApartments() {
             id,
             propertyName,
             link,
-            'Test',
+            'Apartment',
             price,
             beds,
             bedString,

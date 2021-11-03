@@ -35,7 +35,7 @@ function  storePreference() {
             apartments[i].meets = false;
         }
 
-        if (apartments[i].bed < flist[2] || apartments[i].bath < flist[3]) {
+        if (apartments[i].numBeds < flist[2] || apartments[i].numBaths < flist[3]) {
             apartments[i].meets = false;
         }
 
@@ -47,6 +47,9 @@ function  storePreference() {
             apartments[i].meets = false;
         }
     }
+    var list = document.getElementById("list");
+    list.innerHTML = "";
+    loadList(list);
     refresh();
 } // storePreference
 

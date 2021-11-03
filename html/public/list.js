@@ -2,6 +2,7 @@
  * This function will create all the apartments.
  */
 function loadList(list) {
+  console.log("In load list");
   var a = 0;
   while (a < apartments.length) {
     createApartment(a, list);

@@ -95,10 +95,10 @@ function createApartment(number, list) {
   iteme.innerHTML = "Price: $" + apartments[number].price;
 
   var itemf = document.createElement("p");
-  itemf.innerHTML = apartments[number].bed + " Bed";
+  itemf.innerHTML = apartments[number].bedsString;
 
   var itemg = document.createElement("p");
-  itemg.innerHTML = apartments[number].bath + " Bath";
+  itemg.innerHTML = apartments[number].bathsString;
 
   //var itemh = document.createElement("p");
   //itemh.innerHTML = "\n" //apartments[number].dorm == true ? "Dorm" : "Apartment";

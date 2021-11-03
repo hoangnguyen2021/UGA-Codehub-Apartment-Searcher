@@ -1,12 +1,14 @@
 
-function Apartment(id, name, link, description, price, bed, bath, petFriendly, dorm, apartment, lat, lng, onMap, open, meets) {
+function Apartment(id, name, link, description, price, numBed, bedsString, numBaths, bathsString, petFriendly, dorm, apartment, lat, lng, onMap, open, meets) {
   this.id = id;
   this.name = name;
   this.link = link;
   this.description = description;
   this.price = price;
-  this.bed = bed;
-  this.bath = bath;
+  this.numBed = numBed;
+  this.bedsString = bedsString;
+  this.numBaths = numBaths;
+  this.bathsString = bathsString;
   this.petFriendly = petFriendly;
   this.dorm = dorm;
   this.apartment = apartment;
@@ -28,6 +30,8 @@ var baths;
 var link;
 var lat;
 var lng;
+var bedString;
+var bathsString;
 
 // This function creates all of the apartments objects and uses 
 // the google map api to get he latitutde and longitude
@@ -68,7 +72,9 @@ function loadApartments() {
           id = jsonResults[a].id;
           price = jsonResults[a].rent.min;
           beds = getBed(jsonResults[a].beds);
+          bedString = jsonResults[a].beds;
           baths = getBath(jsonResults[a].baths);
+          bathsString = jsonResults[a].baths;
           link = jsonResults[a].url;
           lat = latResults[a];
           lng = lngResults[a];
@@ -79,7 +85,9 @@ function loadApartments() {
             'Test',
             price,
             beds,
+            bedString,
             baths,
+            bathsString,
             true,
             false,
             true,

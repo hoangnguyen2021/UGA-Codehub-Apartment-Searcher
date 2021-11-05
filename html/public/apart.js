@@ -1,4 +1,4 @@
-
+//Creates Apartment objects
 function Apartment(id, name, link, description, price, numBed, bedsString, numBaths, bathsString, petFriendly, dorm, apartment, lat, lng, onMap, open, meets) {
   this.id = id;
   this.name = name;
@@ -18,6 +18,8 @@ function Apartment(id, name, link, description, price, numBed, bedsString, numBa
   this.open = open;
   this.meets = meets;
 }
+
+//Set up various variable
 var apartments = [];
 let jsonResults = {};
 var latResults = [];
@@ -33,8 +35,8 @@ var lng;
 var bedString;
 var bathsString;
 
-// This function creates all of the apartments objects and uses 
-// the google map api to get he latitutde and longitude
+// This function creates all of the Apartments objects and uses 
+// the Google Map API to get the latitutde and longitude
 function loadLocations(callback) {
   var i = 0;
   var j = 0; 
@@ -62,6 +64,7 @@ function loadLocations(callback) {
     });
   }
 
+// Loads the Apartments
 function loadApartments() {
     fetch('./apartments_search.json')
     .then(results => results.json())
@@ -105,177 +108,14 @@ function loadApartments() {
   }
 
 
+  //Gets the number of beds
   function getBed(jsonBed) {
     var stringarr = jsonBed.split("");
     return stringarr[0];
   }
 
+  //Gets the number of bathrooms
   function getBath(jsonBath) {
     var stringarr = jsonBath.split("");
     return stringarr[0];
   }
-
-//Apartment Objects for Testing
-/*
-apartments.push(new Apartment(
-  "a", "Worst Western",
-  "www.here.com",
-  "Big place",
-  300,
-  2,
-  3,
-  false,
-  true,
-  false,
-  {lat: 33.9598, lng: -83.359},
-  false,
-  false,
-  true,
-));
-apartments.push(new Apartment(
-  "b",
-  "La Keenta",
-  "www.there.com",
-  "Tiny place",
-  400,
-  1,
-  2,
-  true,
-  true,
-  true,
-  {lat: 33.9598, lng: -83.364},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "c",
-  "Holiday Out",
-  "www.este.com",
-  "Broken down",
-  350,
-  2,
-  3,
-  true,
-  false,
-  false,
-  {lat: 33.9598, lng: -83.369},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "d",
-  "Mary Ott",
-  "www.coolmath.com",
-  "Affordable",
-  476,
-  3,
-  2,
-  true,
-  true,
-  false,
-  {lat: 33.9598, lng: -83.374},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "e",
-  "Fake name",
-  "www.website?.com",
-  "For the rich",
-  100,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.9598, lng: -83.379},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "f",
-  "Running out",
-  "www.github.com",
-  "For the lazy",
-  200,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.94, lng: -83.37},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "g",
-  "Of Ideas",
-  "www.github.com",
-  "For the lazy",
-  200,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.96, lng: -83.35},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "h",
-  "For Dumb Names",
-  "www.github.com",
-  "For the lazy",
-  200,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.98, lng: -83.33},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "i",
-  "Please Hurry",
-  "www.github.com",
-  "For the lazy",
-  200,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.92, lng: -83.32},
-  false,
-  false,
-  true
-));
-apartments.push(new Apartment(
-  "j",
-  "Back End Team",
-  "www.github.com",
-  "For the lazy",
-  200,
-  3,
-  3,
-  false,
-  false,
-  true,
-  {lat: 33.95, lng: -83.33},
-  false,
-  false,
-  true
-)) */
-
-
-

@@ -3,8 +3,8 @@ var flist = [] // array to store preferences
 var plist = ["min", "max", "beds", "baths", "pet", "washdry", "dorm", "apartment"];
 // array of all the elements to pull preferneces from
 
+//Stores the user's filters for later
 function  storePreference() {
-
     for (var i = 0; i < plist.length; i++) {
         var x = document.getElementById(plist[i]);
         if (x.type == "text") {
@@ -53,6 +53,7 @@ function  storePreference() {
     refresh();
 } // storePreference
 
+//Resets the filter to default
 function clearPrefernce() {
     for (var i = 0; i < plist.length; i++) {
         var x = document.getElementById(plist[i]);

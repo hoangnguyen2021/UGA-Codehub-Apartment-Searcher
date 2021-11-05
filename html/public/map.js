@@ -36,6 +36,7 @@ function CenterControl(controlDiv, map) {
     map.panTo(UGA);
   });
 }
+//Enables the siderbar control on the map
 function SidebarControl(map) {
   const sidebar = document.getElementById("list");
   sidebar.classList.add("list");
@@ -45,6 +46,7 @@ function SidebarControl(map) {
   sidebar.appendChild(controlText);
   loadList(controlText, map);
 }
+//Setsup the Google Map
 function initMap() {  
   var map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
@@ -111,6 +113,7 @@ function initMap() {
 
   SidebarControl(map);
 }
+//Shows some set markers
 function showMarkers() {
   var position1 = {lat: 33.9498, lng: -83.3734 }
   var position2 = {lat: 33.9598, lng: -83.3744};

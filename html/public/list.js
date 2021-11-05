@@ -1,6 +1,4 @@
-/*
- * This function will create all the apartments.
- */
+//This function will create all the apartments.
 function loadList(list) {
   console.log("In load list");
   var a = 0;
@@ -10,6 +8,7 @@ function loadList(list) {
   }
 }
 
+//Test method to output the locations to the console
 function testLocations() {
   for (var i = 0; i < apartments.length; i++) {
     console.log(apartments[i].name);
@@ -18,10 +17,9 @@ function testLocations() {
     console.log(apartments[i].lng);
   }
 }
-/*
- * This will refresh all apartments being shown for the list.
- * Any apartment with meets will be shown.
- */
+
+//This will refresh all apartments being shown for the list.
+//Any apartment with meets will be shown.
 function refresh() {
   var a = 0;
   while (a < apartments.length) {
@@ -29,10 +27,9 @@ function refresh() {
     a = a + 1;
   }
 }
-/* 
- * This will display an apartment properly.
- * It also makes sure no marker is on when it is displayed. (At least it should. I doubt it will.)
- */
+ 
+//This will display an apartment properly.
+//It also makes sure no marker is on when it is displayed. (At least it should. I doubt it will.)
 function displayApartment(number) {
   if (apartments[number].meets) {
     document.getElementById(apartments[number].id).style.display = "block";
@@ -41,6 +38,8 @@ function displayApartment(number) {
     document.getElementById(apartments[number].id).style.display = "none";
   }
 }
+
+//Adds an apartment to the list of filtered apartments
 function createApartment(number, list) {
   list = document.getElementById("list");
   var divElement = document.createElement("div");

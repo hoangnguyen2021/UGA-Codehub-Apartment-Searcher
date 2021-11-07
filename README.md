@@ -3,5 +3,4 @@ This is a website deisgned to help UGA students find student apartments and filt
 
 link to website:
 
-https://ugaapartmentfinder.com
-
+https://uga-student-apartment-searcher.web.app/
